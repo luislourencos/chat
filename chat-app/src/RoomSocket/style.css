@@ -1,0 +1,41 @@
+.messages {
+    width: 500px;
+    height: 500px;
+    border:2px solid black;
+    padding: 10px;
+    overflow: scroll;
+  
+  }
+  .send-message {
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .boxContainer{
+      font-size: 13px;
+    width: 100%;
+    display: flex;
+  }
+  .boxContainer--right{
+    justify-content: flex-end;
+  }
+  .boxContainer--left{
+    justify-content: flex-start;
+  }
+  
+  .userBox{
+    margin:10px;
+    padding:10px;
+    width: 80%;
+    background-color: rgb(131, 194, 249);
+    border-radius: 10px 
+  }
+  .anotherBox {
+     margin:10px;
+    padding:10px;
+    width: 80%;
+    background-color: rgb(165, 255, 151);
+    border-radius: 10px 
+  }

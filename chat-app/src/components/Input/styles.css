@@ -1,0 +1,39 @@
+.input{
+width:95%;
+
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+}
+.input__label{
+margin-bottom:3px;
+color: grey;
+}
+.input__box {
+    outline: none;
+    height: 30px;
+    border:0.9px solid silver;
+    border-radius: 3px; 
+    font-size: 15px;  
+    padding-left:5px;
+    padding-right: 0px;
+
+}
+.input__error{
+    display: flex;
+    height: 10px;
+    justify-content: flex-end;
+    margin:0;
+    padding: 0;
+    position: relative;
+    right: 10px;
+    bottom:20px;
+}
+.input__error-text {
+    background: white;
+    height: 10px;
+    color:#ed4337;
+    font-size: 12px;
+    text-align: right;
+    padding: 0 5px;
+}

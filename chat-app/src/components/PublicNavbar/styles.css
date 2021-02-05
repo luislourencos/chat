@@ -1,0 +1,16 @@
+.navbar__header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0,212,198)
+}
+.navbar__logo{
+    margin:10px;
+    width: 150px;
+}
+.navbar__button{
+    margin:10px;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}

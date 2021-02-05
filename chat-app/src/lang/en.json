@@ -1,0 +1,16 @@
+{
+    "login": {
+        "name":"Name",
+        "email":"E-mail",
+        "password":"Password",
+        "loginButton": "Login",
+        "registerButton": "Register",
+        "notRegister":"I am not registered yet",
+        "isRegister":"I am already registered"
+      },
+    "language":{    
+    "en": "Language changed to English",
+    "es": "Language changed to Spanish"
+    }  
+
+}

@@ -1,0 +1,22 @@
+.navbar {
+    width: 100%;
+    height: 6vh;
+    background-color: silver;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+}
+.navbar__logo {
+    width: 100%;
+}
+
+.navbar__fields{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.navbar__field{
+    border: 1px solid black;
+}

@@ -1,0 +1,15 @@
+@import '../../variables'
+.login
+    width: 100%
+    @include flex-center()
+    &__box
+        margin-top: 100px
+        padding: 20px
+        width: 600px
+        @include flex-center(column)
+        border: 2px solid black
+
+  
+@media screen and (max-width: 600px) 
+    .login__box
+       margin: 20px 

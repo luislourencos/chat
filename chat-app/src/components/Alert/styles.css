@@ -1,0 +1,22 @@
+.error {
+    width: 100%;
+    border-radius: 5px;
+    margin:5px 0;
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.error__message {
+  padding-left:10px 
+}
+.error__button {
+  background-color: transparent;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px; 
+}
+.error__icon {
+    width: 15px;
+}

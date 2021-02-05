@@ -1,0 +1,15 @@
+{
+    "login": {
+        "name":"Nombre",
+        "email":"E-mail",
+        "password":"Contraseña",
+        "loginButton": "Acceder",
+        "registerButton": "Registrarse",
+        "notRegister":"todavia no estoy registrado",
+        "isRegister":"ya estoy registrado"
+      },
+      "language":{
+        "en":"Idioma cambiado a Ingles",
+        "es":"Idioma cambiado a castellano"
+    }   
+}
