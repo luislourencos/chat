@@ -1,15 +1,19 @@
 import { get, post, put, remove } from './RestService';
 
-export const getRoom = (roomId) => {
-    return get(`room/${roomId}`)
+export const getRoom = async (roomId = '') => {
+    debugger
+    const { data } = await get(`room/${roomId}`)
+    return data
 }
 export const createRoom = async (name) => {
-    return await post('room/', { name })
+    const { data } = await post('room/', { name })
+    return data
 }
 
-export const updateRoom = (roomId, name) => {
-    return put(`room/`, { roomId, name })
+export const updateRoom = async (roomId, name) => {
+    const { data } = await put('room/', { roomId, name })
+    return data
 }
-export const deleteRoom = (roomId) => {
-    return remove(`room/${roomId}`)
+export const deleteRoom = async (roomId) => {
+    return await remove(`room/${roomId}`)
 }

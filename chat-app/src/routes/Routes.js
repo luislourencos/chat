@@ -3,36 +3,32 @@ import { Landing } from '../pages/Landing';
 import { Login } from '../pages/Login';
 import { Register } from '../pages/Register';
 import { Home } from '../pages/Home';
-import { Room } from '../pages/Room';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { AuthRoutes } from './AuthRoutes/AuthRoutes';
 import { PublicNavbar } from '../components/PublicNavbar';
+import { ChatRoom } from '../pages/ChatRoom';
+import { NotFound } from '../components/NotFound'
+
 
 export const Routes = () => {
-    const { pathname } = useLocation()
-    console.log(pathname)
-    const ComponentNav = () => {
-        return (
-            <PublicNavbar buttonLogin={pathname === '/'} />
-        )
-    }
+
     return (
         < Switch >
-
             <Route exact path="/">
-                <ComponentNav />
+                <PublicNavbar buttonLogin />
                 <Landing />
             </Route>
             <Route exact path="/login" >
-                <ComponentNav />
+                <PublicNavbar />
                 <Login />
             </Route>
             <Route exact path="/register"  >
-                <ComponentNav />
+                <PublicNavbar />
                 <Register />
             </Route>
             <AuthRoutes exact path="/home" component={Home} />
-            <AuthRoutes exact path="/room" component={Room} />
+            <AuthRoutes exact path="/room/:roomId" component={ChatRoom} />
+            <Route component={NotFound} />
         </Switch >
     )
 }

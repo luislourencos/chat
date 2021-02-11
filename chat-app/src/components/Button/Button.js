@@ -12,7 +12,8 @@ export const Button = ({
     fontWeight = 'bold',
     textTransform = 'none',
     borderRadius = 3,
-    backgroundColor
+    backgroundColor,
+    height = '35px'
 }) => {
     let color, backgroundColorType
     switch (type) {
@@ -50,7 +51,8 @@ export const Button = ({
             fontSize: `${size}px`,
             fontWeight,
             textTransform,
-            borderRadius: `${borderRadius}px`
+            borderRadius: `${borderRadius}px`,
+            height: `${height}`
         }} onClick={!loading ? () => onClick() : () => { }}>
             {loading ? <Spinner size={20} loading={loading} color={color} /> : <p>
                 {text}

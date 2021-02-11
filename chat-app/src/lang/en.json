@@ -6,11 +6,26 @@
         "loginButton": "Login",
         "registerButton": "Register",
         "notRegister":"I am not registered yet",
-        "isRegister":"I am already registered"
+        "isRegister":"I am already registered",
+
+"authenticate": "User authenticated with success"
       },
+      "register":{
+       
+"create": "User created with success"
+    },
     "language":{    
     "en": "Language changed to English",
     "es": "Language changed to Spanish"
+    },  
+    "error":{
+       
+"empty": "This field is mandatory",
+"email": "It is not an email",
+"password": "It must contain at least one letter and 5 characters"
+    },
+    "home":{
+        "logout":"Logout"
     }  
 
 }

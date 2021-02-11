@@ -1,30 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './styles.sass';
 import {
   BrowserRouter as Router,
 } from "react-router-dom";
 import { Routes } from '../routes';
-import {i18next} from '../lang/i18next';
-import {I18nextProvider} from 'react-i18next';
-import {Provider} from 'react-redux';
-import reducers from '../reducers';
-import {applyMiddleware, createStore} from 'redux';
-import thunk from 'redux-thunk';
-import {ErrorHandler} from '../components/ErrorHandler';
+import { i18next } from '../lang/i18next';
+import { I18nextProvider } from 'react-i18next';
+import { connect } from 'react-redux';
 
-const store = createStore(reducers, applyMiddleware(thunk));
-export const App = () => {
+import { ErrorHandler } from '../components/ErrorHandler';
+import { userIsAuth } from '../actions/UserActions'
+import { Spinner } from '../components/Spinner';
+
+
+const AppBase = ({ userIsAuth }) => {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    userIsAuth()
+    setLoading(false)
+  }, [userIsAuth])
+
+  if (loading) {
+    return (<Spinner />)
+  }
 
   return (
-       <Provider store={store}>
-        <I18nextProvider i18n={i18next} >
-          <Router>
-            <Routes />
-          </Router>
-          <ErrorHandler/>
-        </I18nextProvider>
-      </Provider >
+    <I18nextProvider i18n={i18next} >
+      <Router>
+        <Routes />
+      </Router>
+      <ErrorHandler />
+    </I18nextProvider>
   );
 }
+
+const state2props = () => ({})
+const dispatch2props = {
+  userIsAuth
+}
+export const App = connect(state2props, dispatch2props)(AppBase)
 
 

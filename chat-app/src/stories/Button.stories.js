@@ -17,5 +17,6 @@ const Template = (args) => <Button {...args} />;
 
 export const Example = Template.bind({});
 Example.args = {
-    text: 'Button'
+    text: 'Login',
+    loading: true
 };

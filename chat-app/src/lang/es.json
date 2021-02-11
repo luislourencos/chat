@@ -6,10 +6,22 @@
         "loginButton": "Acceder",
         "registerButton": "Registrarse",
         "notRegister":"todavia no estoy registrado",
-        "isRegister":"ya estoy registrado"
+        "isRegister":"ya estoy registrado",
+        "authenticate":"Usuario authenticado con sucesso"
+      },
+      "register":{
+          "create":"Usuario creado con sucesso"
       },
       "language":{
         "en":"Idioma cambiado a Ingles",
         "es":"Idioma cambiado a castellano"
+    },
+    "error":{
+        "empty":"Este campo es obligatório",
+        "email":"No es un email",
+        "password":"Deve contener al menos una letra y 5 caracteres"
+    },
+    "home":{
+        "logout":"Salir"
     }   
 }

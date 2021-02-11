@@ -1,0 +1,27 @@
+.message {
+    margin:5px;
+    font-size: 13px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.message__box{
+    width: 80%;
+    padding: 10px 5px 5px 10px;
+    display:flex;
+    align-items: center;
+    border-radius:15px;
+    min-height:50px;
+    overflow: hidden;
+}
+
+.message__user {
+    widows: 40px;
+    height: 40px;
+}
+.message__text {
+    padding: 0px 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    width: 100%;
+}

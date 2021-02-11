@@ -1,11 +1,3 @@
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: "center";
-  align-items: center;
-  flex-direction: "column";
-}
-
 .landing {
   width: 100%;
   display: flex;
@@ -57,6 +49,76 @@
     margin: 20px;
   }
 }
+.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.home__rooms {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.chat-room {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: _;
+  align-items: center;
+  flex-direction: column;
+}
+.chat-room__header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.chat-room__body {
+  margin: 10px;
+  padding: 5px;
+  width: 85vw;
+  min-height: 200px;
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.chat-room__body-child {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 35px;
+  padding-left: 35px;
+  box-sizing: content-box;
+}
+.chat-room__send {
+  width: 85vw;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: _;
+}
+.chat-room__input {
+  width: 100%;
+  margin: 0px 10px;
+}
+.chat-room__button {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;

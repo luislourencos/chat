@@ -1,0 +1,24 @@
+.room-item {
+    width: 200px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius:10px; 
+    padding: 10px;
+    margin:10px;
+}
+.room-item__header{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.room-item__icon{
+    width: 20px;
+    height: 20px;
+    padding-bottom:4px; 
+}
+.room-item__icon:hover{
+    border-bottom :2px solid silver;
+    transition-duration: .500s
+    
+}

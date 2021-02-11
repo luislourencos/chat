@@ -38,7 +38,7 @@ const PublicNavbarBase = ({ createAlert, buttonLogin = false }) => {
     )
 }
 
-const state2props = () => { };
+const state2props = (state) => { };
 const distach2props = {
     createAlert
 }

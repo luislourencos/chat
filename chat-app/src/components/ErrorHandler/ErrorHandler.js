@@ -6,7 +6,7 @@ import './styles.css'
 
 
 const ErrorHandlerBase = ({ alerts, removeAlert }) => {
-    console.log(alerts)
+
     return (<div className='error-handler'>
         {
             alerts.map(alert => {
