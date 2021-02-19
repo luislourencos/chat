@@ -4,10 +4,9 @@ const { errors: { UnexistenceError } } = require('chat-commons');
 
 
 module.exports = (userId) => {
-    console.log(userId)
     return (async () => {
         if (userId) {
-            console.log('enter')
+
             if (!ObjectId.isValid(userId)) throw new TypeError('The format ID is not correct');
 
             const user = await User.findOne({ _id: ObjectId(userId) })

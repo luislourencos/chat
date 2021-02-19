@@ -3,29 +3,59 @@
         "name":"Name",
         "email":"E-mail",
         "password":"Password",
-        "loginButton": "Login",
+        "loginButton": "Access",
         "registerButton": "Register",
-        "notRegister":"I am not registered yet",
-        "isRegister":"I am already registered",
-
-"authenticate": "User authenticated with success"
+        "notRegister":"I`m not register yet",
+        "isRegister":"I`m already registed",
+        "authenticate":"User authenticated with success"
+      },
+      "landing":{
+        "description": "Chat is used to communicate with groups of people who think about different topics and are entertained even with tools such as sending links to see other pages, criticize and like them. There are ways to express yourself through the network, such as sending emoticons that represent; simple faces, sad, happy, surprised, screaming, crying or making gestures with parts of the face. There are also different types of chat or discussion groups." 
       },
       "register":{
-       
-"create": "User created with success"
+          "create":"User created with success"
+      },
+      "language":{
+        "en":"Language changed to English",
+        "es":"Language changed to Spanish"
     },
-    "language":{    
-    "en": "Language changed to English",
-    "es": "Language changed to Spanish"
-    },  
     "error":{
-       
-"empty": "This field is mandatory",
-"email": "It is not an email",
-"password": "It must contain at least one letter and 5 characters"
+        "empty":"This field is mandatory",
+        "email":"It is not an email",
+        "password":"It must contain at least one letter and 5 characters",
+        "minLength":"It must contain at least 3 characters",
+        "default":"Something has happened ... 😰"
     },
     "home":{
-        "logout":"Logout"
-    }  
-
+        "logout":"Logout",
+        "delete":"Are you sure you want to delete this chat room?",
+        "search":"Search results!",
+        "descriptionTitle":"Welcome to the chatRoom ...",
+        "description":"Enter the chat rooms and make friends !!!",
+        "selectTheme":"Subject",
+        "news":"News",
+        "sports":"Sport",
+        "food":"Food",
+        "music":"Music",
+        "update":"To change the name of the room type in the new name!"
+    },   
+    "room":{
+        "delete":"Delete chat",
+        "name":"Room",
+        "create":"Create Room",
+        "update":"Change"
+    },
+    "navbar":{
+        "exit":"Back"
+    },   
+    "button":{
+        "delete":"Delete",
+        "create":"Create",
+        "update":"Change"
+    },   
+    "chat":{
+        "logout":"Exit",
+        "connect":"Logged in ",
+        "disconnect":"It has left "
+    }   
 }

@@ -21,17 +21,17 @@ router.get('/:roomId?', jwtExtractor, async (req, res) => {
 
 router.post('/', jwtExtractor, (req, res) => {
     try {
-        const { body: { name }, payload: { id: idCreator } } = req
+        const { body: { name, theme }, payload: { id: idCreator } } = req
         //TODO Extract idcreator from payload
-        console.log(idCreator)
-        createRoom(idCreator, name)
+
+        createRoom(idCreator, name, theme)
             .then((room) => res.status(201).json(room))
             .catch((error) => errorHandler(error, res))
     } catch (error) {
         errorHandler(error, res)
     }
 })
-router.patch('/', jwtExtractor, async (req, res) => {
+router.put('/', jwtExtractor, async (req, res) => {
     try {
         const { body: { roomId, name }, payload: { id: idCreator } } = req
 
@@ -45,7 +45,6 @@ router.patch('/', jwtExtractor, async (req, res) => {
 router.delete('/:roomId?', jwtExtractor, async (req, res) => {
     try {
         const { params: { roomId }, payload: { id: idCreator } } = req
-        console.log({ roomId, idCreator })
         deleteRoom(roomId, idCreator)
             .then(() => res.status(201).json({ message: "room deleted" }))
             .catch((error) => errorHandler(error, res))

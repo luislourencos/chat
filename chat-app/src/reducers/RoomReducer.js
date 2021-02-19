@@ -16,7 +16,6 @@ export const room = (state = initialState, action) => {
                 }
                 return room
             })
-
             return { ...state, room: updateRooms }
         case ROOM_DELETE:
             const rooms = state.room.filter((element => action.payload !== element.id))

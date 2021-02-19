@@ -1,3 +1,6 @@
+.fade{
+    width: 100%;
+}
 .message {
     margin:5px;
     font-size: 13px;
@@ -5,23 +8,69 @@
     display: flex;
     align-items: center;
 }
+.message--left{
+    justify-content: flex-start;
+}
+.message--right{
+    justify-content: flex-end;
+}
+.message__box--left{
+    border-radius: 25px 25px 25px 0px;
+}
+.message__box--right{
+    border-radius: 25px 25px 0px 25px;
+}
 .message__box{
-    width: 80%;
+    width: 90%;
     padding: 10px 5px 5px 10px;
     display:flex;
-    align-items: center;
-    border-radius:15px;
+    align-items: flex-start;
     min-height:50px;
     overflow: hidden;
 }
 
 .message__user {
-    widows: 40px;
-    height: 40px;
+    widows: 35px;
+    height: 35px;
+}
+.message__profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
 }
 .message__text {
-    padding: 0px 10px;
-    font-size: 15px;
-    letter-spacing: 1px;
+    padding: 0px 5px;
+    font-size: 14px;
     width: 100%;
+    text-align: left;
+}
+.message__name {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: white;
+    text-align: center;
+}
+.message__date {
+  text-align: center;
+  font-size: 9px;
+  color: white;
+  margin:2px;
+
+}
+.message__loged {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+
+
+}
+.message__info {
+ min-height: 45px;
+    width: 80px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+
 }

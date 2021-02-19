@@ -1,9 +1,10 @@
 import React from 'react';
 import './styles.css';
-import close from '../../icons/close.png'
 
-export const Alert = ({ message, type = 'success', onClick }) => {
-    let color, backgroundColor;
+
+export const Alert = ({ message, type = 'success', onClick, colorAlert }) => {
+    let color, backgroundColor, opacity;
+
     switch (type) {
         case 'success':
             color = 'white';
@@ -17,20 +18,23 @@ export const Alert = ({ message, type = 'success', onClick }) => {
             color = 'black';
             backgroundColor = 'yellow';
             break;
-
+        case 'info':
+            color = 'white';
+            backgroundColor = 'rgb(0,212,198)';
+            break;
         default:
             break;
     }
-
+    if (colorAlert) {
+        backgroundColor = colorAlert
+        opacity = '1'
+    }
 
     return (
-        <div className='error' style={{ color, backgroundColor }}>
+        <div className='error' style={{ color, backgroundColor, opacity }} onClick={onClick}>
             <div className='error__message'>
                 <p>{message}</p>
             </div>
-            <button className='error__button' onClick={onClick}>
-                <img className='error__icon' src={close} alt='close' />
-            </button>
         </div>
     )
 }

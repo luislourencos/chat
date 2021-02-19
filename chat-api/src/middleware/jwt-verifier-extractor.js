@@ -5,7 +5,7 @@ module.exports = (secret, errorHandler) =>
         try {
             const [, token] = req.header('authorization').split(' ')
 
-            console.log(token)
+
             jwt.verify(token, secret)
                 .then(payload => {
                     req.payload = payload

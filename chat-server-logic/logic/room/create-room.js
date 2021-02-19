@@ -3,7 +3,7 @@ const { utils: { String }, errors: { DuplicityError } } = require('chat-commons'
 require('dotenv').config();
 
 
-module.exports = (idCreator, name) => {
+module.exports = (idCreator, name, theme) => {
     String.notVoid(idCreator)
     String.notVoid(name)
 
@@ -14,12 +14,14 @@ module.exports = (idCreator, name) => {
 
         if (room) throw new DuplicityError(`Allready exist one room with this ${name}`)
 
-        const roomCreated = await Room.create({ idCreator: ObjectId(idCreator), name })
+        const { _id } = await Room.create({ idCreator: ObjectId(idCreator), name, theme: theme })
+        const roomCreated = await Room.findById(_id).populate('idCreator', 'name').lean()
 
         return {
             id: roomCreated._id.toString(),
             name: roomCreated.name,
             idCreator: roomCreated.idCreator,
+            theme: roomCreated.theme,
             date: roomCreated.date
         }
     })()

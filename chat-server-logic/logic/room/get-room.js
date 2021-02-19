@@ -8,7 +8,7 @@ module.exports = (roomId) => {
 
     return (async () => {
         if (roomId) {
-            const room = await Room.findById(roomId)
+            const room = await Room.findById(roomId).populate('idCreator', 'name')
 
             if (!room) throw new UnexistenceError('Does not exist room with this id');
 
@@ -20,16 +20,17 @@ module.exports = (roomId) => {
             }]
 
         } else {
-            const rooms = await Room.find({}).sort({ date: -1 });
+            const rooms = await Room.find({}).populate('idCreator', 'name').sort({ date: -1 });
 
             if (rooms.length === 0) throw new UnexistenceError('Does not exist rooms in the database')
 
-            const sanitizeRooms = rooms.map(({ _id, idCreator, name, date }) => {
+            const sanitizeRooms = rooms.map(({ _id, idCreator, name, date, theme }) => {
                 return {
                     id: _id.toString(),
                     idCreator,
                     name,
-                    date
+                    date,
+                    theme
                 }
             })
 

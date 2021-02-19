@@ -11,7 +11,7 @@ describe('Server Logic Create Room', () => {
     before(async () => {
         await mongoose.connect(MONGODB_URL)
     })
-    debugger
+
     let idCreator, roomName, roomId, messageCreate
     beforeEach(async () => {
         await Room.deleteMany()

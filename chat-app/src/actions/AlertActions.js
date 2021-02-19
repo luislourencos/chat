@@ -5,7 +5,7 @@ export const createAlert = (message, type) => (dispatch) => {
     const payload = { id: Math.random() + '', message, type };
 
     dispatch({ type: ALERT_CREATE, payload });
-    setTimeout(() => removeAlert(payload.id)(dispatch), 5000);
+    setTimeout(() => removeAlert(payload.id)(dispatch), 4000);
 }
 
 export const removeAlert = (id) => (dispatch) => {

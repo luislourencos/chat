@@ -1,0 +1,1 @@
+export { GitLogo } from './GitLogo'

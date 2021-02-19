@@ -24,7 +24,7 @@ router.get('/get/:userId?', jwtExtractor, async (req, res) => {
 /**
  * @swagger
  * /register:
-*   post:
+*   get:
 *         summary: Adds a new user
 *         requestBody:
 *           description: Optional description in *Markdown*

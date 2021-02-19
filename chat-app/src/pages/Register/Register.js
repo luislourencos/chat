@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './styles.sass'
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
@@ -20,6 +20,8 @@ export const RegisterBase = ({ createAlert }) => {
     const { t } = useTranslation();
     const history = useHistory()
 
+    const emailRef = useRef(null)
+    const passwordRef = useRef(null)
 
     const handlerSubmit = async () => {
         //validateFiels
@@ -32,7 +34,7 @@ export const RegisterBase = ({ createAlert }) => {
             return setLoading(false)
         } else {
             try {
-                await register(name, email, password)
+                await register(name, email.toLowerCase(), password)
                 createAlert(t('register.create'))
                 history.push('/login')
             } catch (error) {
@@ -53,26 +55,32 @@ export const RegisterBase = ({ createAlert }) => {
                         setName(value)
                     }}
                     error={t(errorName)}
+                    onKeyPress={() => emailRef.current.focus()}
                 />
                 <Input
+                    inputRef={emailRef}
                     label={t('login.email')}
                     onChange={(value) => {
                         setErrorEmail('')
                         setEmail(value)
                     }}
                     error={t(errorEmail)}
+                    onKeyPress={() => passwordRef.current.focus()}
                 />
                 <Input
+                    type='password'
+                    inputRef={passwordRef}
                     label={t('login.password')}
                     onChange={(value) => {
                         setErrorPassword('')
                         setPassword(value)
                     }}
                     error={t(errorPassword)}
+                    onKeyPress={handlerSubmit}
 
                 />
                 <Button text={t('login.registerButton')} loading={loading} onClick={handlerSubmit} />
-                <Button type='link' size={14} onClick={() => history.push('/register')} text={t('login.notRegister')} />
+                <Button type='link' size={14} onClick={() => history.push('/login')} text={t('login.notRegister')} />
             </div>
         </div>
     )

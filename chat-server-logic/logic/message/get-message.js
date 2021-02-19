@@ -25,7 +25,7 @@ module.exports = (roomId, messageId) => {
                 date: message.date
             }]
         } else {
-            const messagesRoom = await Message.find({ idRoom: roomId }).populate('idUser', 'name').sort({ date: 1 }).lean();
+            const messagesRoom = await Message.find({ idRoom: roomId }).populate('idUser', 'name').sort({ date: 1 }).limit(50).lean();
 
             if (messagesRoom.length === 0) throw new UnexistenceError('Does not exist messages in this room')
 

@@ -2,11 +2,93 @@
     
 .home
     width: 100%
-    @include flex-center(column)
+    min-height: 150vw
+    background-color: rgba(80,80,80,0.1)
+    @include flex-center(column,flex-start)
     &__rooms
+        margin: 10px
         width: 100%
-        @include flex-center(row,space-around)
+        @include flex-center(column,center)
         flex-wrap: wrap
-       
-    
+    &__header
+        background-color: white
+        width: 100%
+        @include flex-center(row,space-between, flex-start)
+        flex-wrap: wrap  
+        box-shadow: -2px 0px 16px -3px #000000  
+    &__description
+        margin:20px
+    &__controls
+        margin:20px 
+        @include flex-center(column,center,flex-end)    
+    &__search 
+       border: 2px solid silver
+       padding: 10px 10px 0px 10px
+       border-radius: 50px 
+       @include flex-center(row,flex-end,center) 
+       &-results
+           margin: 10px
+           padding: 10px
+           border-bottom: 2px solid silver
+           width: 90%
+           @include flex-center(column,center,center) 
+       &-item
+           width: 95vw
+           display: flex
+           flex-wrap: nowrap
+           overflow-x: auto       
+       &-card
+           flex: 0 0 auto 
+               
+       &-image
+           position: relative
+           bottom: 3px
+           width: 25px
+           height: 25px         
+       &-input
+           border: 1px solid white !important
+           width: 0px
+       &-input:focus
+           transition-duration: 1s
+           width: 200px
+           border: 1px solid white
+       &-button
+           width: 50px    
+           
+    &__search:focus
         
+    &__add
+        width: 40px
+        height: 40px 
+    &__modal
+        width: 100%
+        @include flex-center(column,center,center)        
+        &-icon
+            width: 60px
+            height: 60px
+        &-image
+            position: absolute
+            width: 60px
+            height: 60px
+            top: -55px 
+            background-color: white
+            border-radius: 50%
+            padding: 20px 20px 20px 20px
+            border: 2px solid #057BFD
+        &-select
+            border-radius: 5px 
+            height: 40px
+            margin: 10px
+            width: 95%   
+            border: 1px solid silver
+            padding: 3px
+            font-size: 15px 
+            outline: none
+        &-placeholder
+            color: silver
+@media ( max-width: 600px )
+    .home__header
+        @include flex-center(column,space-between, flex-end)
+    .home__controls
+        width: 90%
+        @include flex-center(row-reverse,space-between, flex-end)

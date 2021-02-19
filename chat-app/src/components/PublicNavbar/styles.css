@@ -14,3 +14,45 @@
     display: flex;
     justify-content: flex-end;
 }
+.navbar__drop{
+    position: absolute;
+    display: flex;
+    align-items: flex-start
+}
+
+.navbar__drop-button{
+    width: 30px;
+    height:35px;
+    background-color: blue;
+    display: flex;
+    align-items: center
+}
+.navbar__image{
+    width: 25px;
+    height: 25px
+}
+.navbar__option{
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    align-items: center
+}
+.navbar__text{
+    margin:5px
+}
+.navbar__select{
+    border:1px solid red;
+    width: 30px;
+    height: 35px;
+    overflow: hidden;
+    transition: .400s
+
+}
+.navbar__select--none{
+    border:1px solid red;
+    width: 120px;
+    height: 70px;
+    overflow: none;
+    transition: .600s
+
+}

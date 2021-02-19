@@ -21,12 +21,13 @@ module.exports = (roomId, idCreator, name) => {
         if (_room) throw new DuplicityError(`Allready exist one room with this ${name}`)
 
         await Room.findByIdAndUpdate(roomId, { $set: { name, date: new Date() } })
-        const updatedRoom = await Room.findById(roomId);
+        const updatedRoom = await Room.findById(roomId).populate('idCreator', 'name').lean();
 
         return {
             id: updatedRoom._id.toString(),
             name: updatedRoom.name,
-            idCreator: updatedRoom.idCreator.toString(),
+            idCreator: updatedRoom.idCreator,
+            theme: updatedRoom.theme,
             date: updatedRoom.date
         }
     })()

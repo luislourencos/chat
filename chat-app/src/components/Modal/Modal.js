@@ -13,6 +13,7 @@ export const Modal = ({
 
     return (
         <div className='modal'>
+            <div className='modal__background' onClick={() => closeModal()}></div>
             <div className='modal__box'>
                 <div className='modal__header'>
                     {!!title && <p className='modal__title'>{title}</p>}

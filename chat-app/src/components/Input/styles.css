@@ -1,6 +1,6 @@
 .input{
 width:95%;
-
+margin-bottom:5px;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -27,7 +27,7 @@ color: grey;
     padding: 0;
     position: relative;
     right: 10px;
-    bottom:20px;
+    bottom:15px;
 }
 .input__error-text {
     background: white;

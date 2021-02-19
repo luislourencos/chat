@@ -1,8 +1,9 @@
 import i18next from 'i18next';
-const lng = localStorage.getItem('language')
+import moment from 'moment'
+
 
 i18next.init({
-    lng: lng,
+    lng: localStorage.getItem('language') || 'en',
     interpolation: {
         escapeValue: false,
     },
@@ -16,7 +17,7 @@ i18next.init({
 export { i18next };
 
 export const changeLanguage = (language) => {
-
     localStorage.setItem('language', language);
+    moment.locale([language])
     i18next.changeLanguage(language);
 };

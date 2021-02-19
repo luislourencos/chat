@@ -7,6 +7,7 @@ const REACT_APP_SECRET = process.env.REACT_APP_SECRET
 export const USER_LOGIN = "USER_LOGIN";
 export const USER_LOGOUT = "USER_LOGOUT";
 export const USER_ISAUTH = "USER_ISAUTH";
+export const USER_ROOM_LIST = "USER_ROOM_LIST";
 
 
 export const userLogin = (email, password) => async (dispatch) => {

@@ -4,7 +4,7 @@ import { Spinner } from '../Spinner';
 import PropTypes from 'prop-types';
 
 export const Button = ({
-    text = 'example',
+    text = '',
     onClick = () => { },
     loading = false,
     type = 'primary',
@@ -13,7 +13,8 @@ export const Button = ({
     textTransform = 'none',
     borderRadius = 3,
     backgroundColor,
-    height = '35px'
+    height = '35px',
+    children
 }) => {
     let color, backgroundColorType
     switch (type) {
@@ -54,6 +55,7 @@ export const Button = ({
             borderRadius: `${borderRadius}px`,
             height: `${height}`
         }} onClick={!loading ? () => onClick() : () => { }}>
+            {children}
             {loading ? <Spinner size={20} loading={loading} color={color} /> : <p>
                 {text}
             </p>}
@@ -68,7 +70,7 @@ Button.propTypes = {
     fontWeight: PropTypes.oneOf(['none', 'bold']),
     borderRadius: PropTypes.number,
     type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'link']),
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     onClick: PropTypes.func.isRequired,
 };
 

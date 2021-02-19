@@ -9,6 +9,9 @@
         "isRegister":"ya estoy registrado",
         "authenticate":"Usuario authenticado con sucesso"
       },
+      "landing":{
+        "description": "El chat se usa para comunicarse con grupos de personas que piensan en diferentes temas y se entretienen incluso con herramientas como el video chat y el envío de enlaces para ver otras páginas, criticarlas y dar me gusta. Hay formas de expresarse a través de la red, como; envío de emoticonos que representen; rostros simples, tristes, felices, sorprendidos, gritando, llorando o haciendo gestos con partes del rostro. También existen diferentes tipos de chat o también grupos de discusión" 
+      },
       "register":{
           "create":"Usuario creado con sucesso"
       },
@@ -19,9 +22,40 @@
     "error":{
         "empty":"Este campo es obligatório",
         "email":"No es un email",
-        "password":"Deve contener al menos una letra y 5 caracteres"
+        "password":"Deve contener al menos una letra y 5 caracteres",
+        "minLength":"Deve contener al 3 caracteres",
+        "default":"Algo ha pasado...😰 "
     },
     "home":{
-        "logout":"Salir"
-    }   
+        "logout":"Salir",
+        "delete":"¿Esta seguro que deseja eliminar esta sala de conversación?",
+        "search":"Resultados de la busquedad!",
+        "descriptionTitle":"Bien venido al chatRoom...",
+        "description":"Entra en las habitaciónes de conversación y haz amigos!!!",
+        "selectTheme":"Asunto",
+        "news":"Noticias",
+        "sports":"Deporte",
+        "food":"Alimentación",
+        "music":"Música",
+        "update":"Para cambiar el nombre de la sala escriba en el nuevo nombre!"
+    },   
+    "room":{
+        "delete":"Eliminar chat",
+        "name":"Sala",
+        "create":"Crear Sala",
+        "update":"Cambiar"
+    },
+    "navbar":{
+        "exit":"Volver"
+    },   
+    "button":{
+        "delete":"Eliminar",
+        "create":"Crear",
+        "update":"Cambiar"
+    },   
+    "chat":{
+        "logout":"Salir",
+        "connect":"Ha entrado ",
+        "disconnect":"Ha salido "
+    }
 }

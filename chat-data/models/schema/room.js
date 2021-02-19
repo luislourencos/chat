@@ -12,6 +12,10 @@ module.exports = new Schema({
         ref: 'User',
         required: true
     },
+    theme: {
+        type: String,
+        require: true
+    },
     date: {
         type: Date,
         default: new Date(),

@@ -17,6 +17,7 @@ module.exports = {
                 name: 'JSONPlaceholder',
                 url: 'https://jsonplaceholder.typicode.com',
             },
+
         },
         servers: [
             {
@@ -24,6 +25,7 @@ module.exports = {
                 description: 'Development server',
             },
         ],
+
     },
     apis: ['src/routes/*.js'],
 };

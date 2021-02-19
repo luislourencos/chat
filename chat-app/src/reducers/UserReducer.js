@@ -4,7 +4,7 @@ import { USER_LOGIN, USER_LOGOUT, USER_ISAUTH } from '../actions/UserActions';
 
 const initialState = {
     user: {},
-    isAuth: false
+    isAuth: false,
 }
 
 export const user = (state = initialState, action) => {
@@ -15,7 +15,6 @@ export const user = (state = initialState, action) => {
             return { ...state, user: action.payload.user, isAuth: action.payload.isAuth };
         case USER_LOGOUT:
             return state = [];
-
         default:
             return state;
     }

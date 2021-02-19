@@ -11,7 +11,6 @@ export const Room = ({ roomId }) => {
 
     useEffect(() => {
         const socket = socketIOClient(ENDPOINT);
-        console.log('enter')
         socket.emit('join_room', roomId)
         socket.on('userId', (user) => {
             setUserId(user)

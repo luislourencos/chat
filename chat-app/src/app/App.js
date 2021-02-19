@@ -11,6 +11,7 @@ import { connect } from 'react-redux';
 import { ErrorHandler } from '../components/ErrorHandler';
 import { userIsAuth } from '../actions/UserActions'
 import { Spinner } from '../components/Spinner';
+import { GitLogo } from '../components/GitLogo';
 
 
 const AppBase = ({ userIsAuth }) => {

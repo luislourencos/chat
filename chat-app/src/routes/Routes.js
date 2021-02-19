@@ -8,24 +8,17 @@ import { AuthRoutes } from './AuthRoutes/AuthRoutes';
 import { PublicNavbar } from '../components/PublicNavbar';
 import { ChatRoom } from '../pages/ChatRoom';
 import { NotFound } from '../components/NotFound'
+import { GitLogo } from '../components/GitLogo';
+import { PublicRoutes } from './PublicRoutes';
 
 
 export const Routes = () => {
 
     return (
         < Switch >
-            <Route exact path="/">
-                <PublicNavbar buttonLogin />
-                <Landing />
-            </Route>
-            <Route exact path="/login" >
-                <PublicNavbar />
-                <Login />
-            </Route>
-            <Route exact path="/register"  >
-                <PublicNavbar />
-                <Register />
-            </Route>
+            <PublicRoutes exact path='/' component={Landing} />
+            <PublicRoutes exact path='/login' component={Login} />
+            <PublicRoutes exact path='/register' component={Register} />
             <AuthRoutes exact path="/home" component={Home} />
             <AuthRoutes exact path="/room/:roomId" component={ChatRoom} />
             <Route component={NotFound} />

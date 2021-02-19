@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './styles.sass'
 import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
@@ -10,14 +10,15 @@ import { connect } from 'react-redux';
 import { validateEmail, validatePassword, getErrorMessage } from '../../utils'
 
 export const LoginBase = ({ createAlert, userLogin }) => {
-    const [email, setEmail] = useState('sergio123@mail.com')
-    const [password, setPassword] = useState('t12345')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const [errorEmail, setErrorEmail] = useState('')
     const [errorPassword, setErrorPassword] = useState('')
     const [loading, setLoading] = useState(false)
     const { t } = useTranslation();
     const history = useHistory()
 
+    const passwordRef = useRef(null)
 
     const handlerSubmit = async () => {
         //validateFiels
@@ -29,7 +30,7 @@ export const LoginBase = ({ createAlert, userLogin }) => {
             return setLoading(false)
         } else {
             try {
-                await userLogin(email, password)
+                await userLogin(email.toLowerCase(), password)
                 createAlert(t('login.authenticate'))
                 history.push('/home')
             } catch (error) {
@@ -53,14 +54,20 @@ export const LoginBase = ({ createAlert, userLogin }) => {
                         setEmail(value)
                     }}
                     error={t(errorEmail)}
+                    onKeyPress={() => {
+                        passwordRef.current && passwordRef.current.focus()
+                    }}
                 />
                 <Input
+                    type='password'
+                    inputRef={passwordRef}
                     label={t('login.password')}
                     onChange={(value) => {
                         setErrorPassword('')
                         setPassword(value)
                     }}
                     error={t(errorPassword)}
+                    onKeyPress={handlerSubmit}
 
                 />
                 <Button text={t('login.loginButton')} loading={loading} onClick={handlerSubmit} />
@@ -70,7 +77,6 @@ export const LoginBase = ({ createAlert, userLogin }) => {
     )
 }
 const state2props = () => ({
-
 })
 const dispatch2props = {
     createAlert,

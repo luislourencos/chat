@@ -11,8 +11,14 @@
         height: 700px
         z-index: -1
         object-fit: cover
-    &__description
+    &__fade
         width: 100%
+        @include flex-center(column,center,center)
+    &__description
+        width: 90%
+        margin: 50px 0px
+        border-radius: 5px
+        background-color: rgba(0,0,0,0.5)
         @include flex-center()
         &-text
             margin: 20px 40px 
